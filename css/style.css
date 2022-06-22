@@ -11,6 +11,57 @@ header{
 	margin-top: 20px;
 }
 
+:root{
+	--clippy: polygon(0 0, 0 0, 0 100%, 0% 100%);
+}
+
+.name{
+	position: relative;
+}
+
+.paragraph{
+	--clippy: circle(0% at 50% 50%);
+}
+
+
+.item{
+	position: relative;
+	padding-left: 1rem;
+	transition: color .1s;
+}
+
+.item::before{
+	content: "";
+	display: block;
+	background: slateblue;
+	width: 120%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: -1;
+	clip-path: var(--clippy);
+	transition: clip-path 2s;
+}
+
+.paragraph::before{
+		background: #F86D70;
+	}
+
+.name:hover::before{
+	clip-path: polygon(0 0, 85% 0, 99% 100%, 0 100%);
+} 
+
+.name:hover + .paragraph::before{
+	clip-path: circle(150% at 50% 50%);
+	transition: clip-path 1.5s 1.5s;
+}
+
+.name:hover,
+.name:hover + .paragraph{
+	color: #FFF;
+}
+
 #botonera{
 	grid-area: botonera;
 }
