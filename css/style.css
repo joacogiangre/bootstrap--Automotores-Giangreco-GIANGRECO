@@ -1,15 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500&display=swap');
 
+
 body{
 	background-color: #A80808;
 	overflow-x: hidden;
 }
 
 header{
-	color: ghostwhite;
+	color: #D5BD89;
 	margin-top: 20px;
 }
-
 
 #botonera{
 	grid-area: botonera;
@@ -50,7 +50,6 @@ header{
 	font-size: 1.2rem;
 	text-align: center;		
 	color: #FFA2A2;
-
 }
 
 #div-img{
@@ -187,6 +186,7 @@ h3{
 		height: auto;
 		align-self: center;
 	}
+}
 
 /*nosotros.html*/
 
@@ -202,10 +202,6 @@ h3{
 	margin-bottom: 5%;
 	width: 90%;
 	height: 90%;
-}
-
-.h-dos{
-	margin: 0 5%;
 }
 
 .contenedor{
@@ -473,6 +469,7 @@ h3{
 		"main main main"
 		"footer footer footer";
 	}
+
 	#parrafos{
 	margin: 5% 3%;
 	font-family: 'Barlow Condensed', sans-serif;
