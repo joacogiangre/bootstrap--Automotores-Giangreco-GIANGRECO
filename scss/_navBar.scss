@@ -12,10 +12,10 @@
 	#links{
 	color: $black;	
 	font-size: $fontXs;
-	}
-		#links:hover{
+	&hover{
 			color: $bg-color;
 			font-weight: $f-weight3;
 			font-size:$fontSm;
 		}
+	}	
 }
