@@ -1,0 +1,21 @@
+#botonera{
+	grid-area: botonera;
+	background-color:$bg-nav;
+	ul{
+		li{
+			a{
+				font-size: $fontXs;
+			} 
+
+		} 
+	}
+	#links{
+	color: $black;	
+	font-size: $fontXs;
+	}
+		#links:hover{
+			color: $bg-color;
+			font-weight: $f-weight3;
+			font-size:$fontSm;
+		}
+}

@@ -1,0 +1,471 @@
+
+
+body{
+	background-color: $bg-color;
+	overflow-x: hidden;
+}
+
+#header{
+	grid-area: header;
+	color: $header-color;
+	margin-top: 20px;
+}
+
+	:root{
+		--clippy: polygon(0 0, 0 0, 0 100%, 0% 100%);
+	}
+
+	.name{
+		position: relative;
+	}
+
+	.paragraph{
+		--clippy: circle(0% at 50% 50%);
+	}
+
+
+	.item{
+		position: relative;
+		padding-left: 1rem;
+		transition: color .1s;
+
+	}
+
+	.item::before{
+		content: "";
+		display: block;
+		background: $animation-bg1;
+		width: 120%;
+		height: 100%;
+		position: absolute;
+		top: 0;
+		left: 0;
+		z-index: -1;
+		clip-path: var(--clippy);
+		transition: clip-path 2s;
+	}
+
+	.paragraph::before{
+			background: $animation-bg;
+		}
+
+	.name:hover::before{
+		clip-path: polygon(0 0, 85% 0, 99% 100%, 0 100%);
+	} 
+
+	.name:hover + .paragraph::before{
+		clip-path: circle(150% at 50% 50%);
+		transition: clip-path 1.5s 1.5s;
+	}
+
+	.name:hover,
+	.name:hover + .paragraph{
+		color: $white;
+	}
+
+#main{
+	grid-area: main;
+	#div-img{
+		display: flex;
+		justify-content: center;
+	}
+	#img-header{
+		height: auto;
+		width: 90%;
+	}
+}
+	#accesibilidad{
+		grid-area: accesibilidad;
+		display: flex;
+		flex-direction: column;
+		justify-content:center;
+		align-content: center;
+	}
+
+		#horarios{
+			margin-right: 4%;
+			height: auto;
+			background-color: $white;
+		}
+			#horarios ul li{
+				list-style: none;
+				font-size: $fontXs;
+			}
+
+		#llegada{
+			margin-right: 4%;
+			height: auto;
+			background-color: $white;
+			font-size: $fontXs;
+		}
+			#llegada ul li{
+				list-style: none;
+				font-size: $fontXs;
+			}
+
+	#carousel-items{
+		display: flex;
+		justify-content: center;
+	}
+
+	#carousel-maps{
+		display:flex;
+		justify-content: center;
+		flex-direction: column;
+		align-content: center;
+	}
+
+	.maps{
+		display: flex;
+		justify-content: center;
+		margin-bottom: 5%;
+		width: auto;
+		align-content: center;
+	}
+
+	.bg-img{
+		background-color: $white;
+		padding-left: 10px;
+		padding-top: 20px;
+		padding-bottom: 20px;
+	}
+
+	.bg-white-color{
+		background-color: $white;
+	}
+
+	.text-black{
+		color: $black;
+		font-weight: $f-weight5;
+	}
+
+	.text-center{
+		text-align: center;
+	}
+
+	#parrafos{
+		margin: 5% 3%;
+		font-family: 'Barlow Condensed', sans-serif;
+		font-size: $fontXs;
+		text-align: center;		
+		color: $p-color;
+	}
+
+h1{
+	font-family: $font;
+	font-size: $fontMd;
+	margin-bottom: 20px	;
+	font-weight: $f-weight4;
+}
+
+h2{
+	font-family: 'Barlow Condensed', sans-serif;
+	font-size: $fontSm;
+	font-weight: $f-weight3;
+}
+
+h3{
+	font-size: $fontXs;
+	font-weight: $f-weight5;
+	color: $black;
+}
+
+#img-nosotros{
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	margin-left: 10%;
+	.img-entrada{
+		margin-top: 2%;
+		margin-bottom: 5%;
+		width: 90%;
+		height: 90%;
+	}
+}
+
+.contenedor{
+	display: grid;
+	grid-template-columns: 100vw;
+	grid-template-rows: repeat(6, auto);
+	grid-template-areas: 
+	"botonera" 
+	"header" 
+	"main"
+	"accesibilidad"
+	"carousel"
+	"footer";
+}
+
+.contenedor2{
+	display: grid;
+	grid-template-columns: 100vw;
+	grid-template-rows: repeat(4, auto);
+	grid-template-areas: 
+	"botonera" 
+	"header" 
+	"main"
+	"footer";
+}
+
+@media (min-width: 768px){
+	.contenedor{
+		grid-template-columns: 50vw 50vw;
+		grid-template-rows: repeat(6, auto);
+		grid-template-areas: 
+		"botonera botonera" 
+		"header header"
+		"main main"
+		"accesibilidad accesibilidad"
+		"carousel carousel"
+		"footer footer";
+	}
+
+	h1{
+	font-size: $fontXl;
+	}
+
+	h2{
+		font-size: $fontMd;
+	}
+
+	#accesibilidad{
+		display: flex;
+		flex-direction: row;
+		justify-content:center;
+		margin-bottom: 10px;
+	}
+
+	#horarios{
+		width: 60%;
+		height: auto;
+		background-color: white;
+	}
+		#horarios ul li{
+			list-style: none;
+			font-size: $fontXs;
+		}
+
+	#llegada{
+		width: 40%;
+		height: auto;
+		background-color: white;
+	}
+		#llegada ul li{
+			list-style: none;
+		}
+
+	#carousel-maps{
+		display: flex;
+		flex-direction:row;
+		justify-content: space-between;
+	}
+
+	.carousel2{
+		width: 100%;
+	}
+	.width{
+		width: 100%;
+	}
+
+	.maps{
+		width: 40%;
+		margin-right: 10%;
+	}
+
+	.icono-footer{
+	width: 10%;
+	}
+}
+
+@media (min-width: 1024px){
+	.contenedor{
+		grid-template-columns: 40vw 40vw 20vw;
+		grid-template-rows: repeat(6, auto);
+		grid-template-areas: 
+		"botonera botonera botonera" 
+		"header header header"
+		"main main main"
+		"accesibilidad accesibilidad accesibilidad"
+		"carousel carousel carousel"
+		"footer footer footer";
+	}
+	#accesibilidad{
+		display: flex;
+		flex-direction: row;
+		justify-content:center;
+		margin-bottom: 10px;
+	}
+
+	#horarios{
+		width: 50%;
+		height: auto;
+		background-color: $white;
+	}
+		#horarios ul li{
+			list-style: none;
+			font-size: $fontXs;
+		}
+
+	#llegada{
+		width: 50%;
+		height: auto;
+		background-color: $white;
+	}
+		#llegada ul li{
+			list-style: none;
+		}
+
+	#carousel-maps{
+		display: flex;
+		flex-direction:row;
+		justify-content: space-between;
+	}
+
+	h1{
+	font-family: 'Barlow Condensed', sans-serif;
+	font-size: $fontXxl;
+	margin-bottom: 20px	;
+	font-weight: $f-weight4;
+}
+
+	h2{
+		font-family: 'Barlow Condensed', sans-serif;
+		font-size: $fontXl;
+		font-weight: $f-weight3;
+	}
+
+	h3{
+		font-size: $fontSm;
+		font-weight: 500;
+		color: black;
+	}
+	#parrafos{
+	margin: 5% 3%;
+	font-family: 'Barlow Condensed', sans-serif;
+	font-size: $fontSm;
+	text-align: center;		
+	color: $p-color;
+	}
+
+	.icono-footer{
+		padding-top: 10px;
+		align-self: center;
+		width: 80px;
+		height: auto;
+	}
+
+	.slogan-footer{
+		padding-bottom: 20px;
+		align-self: center;
+		width: 300px;
+		height: auto;
+	}
+
+	.carousel2{
+		width: 60%;
+	}
+
+}
+
+@media (min-width: 1200px){
+	.contenedor{
+		grid-template-columns: 25vw 25vw 25vw 25vw;
+		grid-template-rows: repeat(6, auto);
+		grid-template-areas: 
+		"botonera botonera botonera botonera" 
+		"header header header header" 
+		"main main main main"
+		"accesibilidad accesibilidad accesibilidad accesibilidad"
+		"carousel carousel carousel carousel"
+		"footer footer footer footer";
+	}
+
+	#accesibilidad{
+		display: flex;
+		flex-direction: row;
+		justify-content:center;
+		margin-bottom: 10px;
+	}
+
+	#horarios{
+		width: 50%;
+		height: auto;
+		background-color: $white;
+	}
+		#horarios ul li{
+			list-style: none;
+			font-size: $fontXs;
+		}
+
+	#llegada{
+		width: 50%;
+		height: auto;
+		background-color: $white;
+	}
+		#llegada ul li{
+			list-style: none;
+		}
+
+	#carousel-maps{
+		display: flex;
+		flex-direction:row;
+	}
+}
+
+@media (min-width: 768px){
+	.contenedor2{
+		grid-template-columns: 50vw 50vw;
+		grid-template-rows: repeat(4, auto);
+		grid-template-areas: 
+		"botonera botonera" 
+		"header header"
+		"main main"
+		"footer footer";
+	}
+
+	#img-nosotros{
+	display: flex;
+	justify-content: center;
+	flex-direction: row;
+	}
+
+	#parrafos{
+	margin: 5% 3%;
+	font-family: 'Barlow Condensed', sans-serif;
+	font-size: $fontSm;
+	text-align: center;		
+	color: $p-color;
+}
+}
+
+@media (min-width: 1024px){
+	.contenedor2{
+		grid-template-columns: 40vw 40vw 20vw;
+		grid-template-rows: repeat(4, auto);
+		grid-template-areas: 
+		"botonera botonera botonera" 
+		"header header header"
+		"main main main"
+		"footer footer footer";
+	}
+
+	#parrafos{
+	margin: 5% 3%;
+	font-family: 'Barlow Condensed', sans-serif;
+	font-size: $fontSm;
+	text-align: center;		
+	color: $p-color;
+}
+}
+
+@media (min-width: 1200px){
+	.contenedor2{
+		grid-template-columns: 25vw 25vw 25vw 25vw;
+		grid-template-rows: repeat(4, auto);
+		grid-template-areas: 
+		"botonera botonera botonera botonera" 
+		"header header header header" 
+		"main main main main"
+		"footer footer footer footer";
+	}
+}
